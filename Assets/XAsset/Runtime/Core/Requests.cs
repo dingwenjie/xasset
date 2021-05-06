@@ -731,7 +731,7 @@ namespace libx
 
         internal override void Load()
         {
-            asset = AssetBundle.LoadFromFile(name);
+            asset = Versions.LoadAssetBundleFromFile(name);
             if (assetBundle == null)
                 error = name + " LoadFromFile failed.";
             loadState = LoadState.Loaded;
@@ -782,7 +782,7 @@ namespace libx
         {
             if (_request == null)
             {
-                _request = AssetBundle.LoadFromFileAsync(name);
+                _request = Versions.LoadAssetBundleFromFileAsync(name);
                 if (_request == null)
                 {
                     error = name + " LoadFromFile failed.";
